@@ -1,0 +1,57 @@
+iniciamos sesion con su -  colocamos la contraseña, permitiendonos iniciar sesion como usuarios root.
+----------------------------------------------------------------------------------------------------------------------------------------
+1- CREAR GRUPOS:
+Utilizamos el comando groupadd acompañado del nombre
+ej. 
+groupadd casa
+
+-verificamos si el grupo se creo con el siguiente comando:
+ cat /etc/group
+
+-Nos debe mostrar de esta manera:
+
+CASA:x:1001:
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+2- AGREGAR USUARIOS A GRUPOS:
+En este caso el usuario es HELMER, ANA y KARYNAAVALOS al grupo casa.
+
+-creamos el usuario colocando el comando:
+useradd + nombre 
+ej.
+
+useradd HELMER
+useradd ANA
+useradd KARYNAAVALOS
+
+-verificamos si el grupo se creo con el siguiente comando:
+cat /etc/passwd 
+
+-para agregar un usuario a un grupo se utiliza el comando:
+adduser
+
+adduser HELMER casa
+adduser ANA  casa
+adduser KARYNAAVALOS casa
+
+
+
+-para ver si ya se agregaron al grupo utilizamos el comando:
+cat /etc/group 
+
+y nos tiene que aperecer asi :
+
+CASA:X:1001:KATHIABERRIOS,SANTIAGO,MARIA
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+3. Cambiar nombre del grupo: Luego de agregar los usuarios cambiamos el nombre del grupo de Casa a Familia y para ello utilizamos groupmod.
+Ejm: groupmod -n Familia Casa.
+    
+    -n ---> nos permite cambiar el nombre.
+    Familia es el nombre nuevo.
+    casa es el nombre existente.
+    
+    
+cat /etc/group nos permite verificar que el nombre del grupo cambio.
